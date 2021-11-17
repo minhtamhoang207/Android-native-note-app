@@ -17,6 +17,8 @@
             android:layout_margin="12dp"
             android:background="@drawable/edit_text_bg"
             android:hint="Subtitle"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
             android:maxLines="1"
             android:overScrollMode="never"
             android:padding="10dp" />
@@ -28,6 +30,8 @@
             android:layout_margin="12dp"
             android:background="@drawable/edit_text_bg"
             android:hint="Title"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
             android:padding="10dp" />
 
         <LinearLayout
@@ -93,6 +97,8 @@
             android:background="@drawable/edit_text_bg"
             android:gravity="start"
             android:hint="Content"
+            android:singleLine="false"
+            android:imeOptions="actionDone"
             android:padding="10dp" />
 
     </LinearLayout>

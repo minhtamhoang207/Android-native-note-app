@@ -1,4 +1,4 @@
-package com.example.androidnote.ui;
+package com.example.androidnote.UI;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -73,7 +73,7 @@ public class InsertNoteActivity extends AppCompatActivity {
 
         if (!subtitle.toString().isEmpty() && !title.toString().isEmpty() && !content.toString().isEmpty()) {
             noteViewModel.insertNote(note);
-            Toast.makeText(this, priority.getClass().getSimpleName(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Success <3", Toast.LENGTH_LONG).show();
         }
         finish();
     }

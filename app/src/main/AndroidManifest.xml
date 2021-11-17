@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidNote">
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".UI.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             android:exported="true">
         </activity>
         <activity
-            android:name=".ui.InsertNoteActivity"
+            android:name=".UI.InsertNoteActivity"
             android:exported="true">
         </activity>
     </application>

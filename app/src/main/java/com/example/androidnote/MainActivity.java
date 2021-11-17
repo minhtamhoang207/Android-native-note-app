@@ -1,21 +1,17 @@
 package com.example.androidnote;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.androidnote.Adapter.NotesAdapter;
 import com.example.androidnote.ViewModel.NoteViewModel;
-import com.example.androidnote.databinding.ActivityAddNoteBinding;
 import com.example.androidnote.databinding.ActivityMainBinding;
-import com.example.androidnote.ui.InsertNoteActivity;
-
-import java.util.Objects;
+import com.example.androidnote.UI.InsertNoteActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         noteViewModel.getAllNote.observe(this, notes -> {
-            recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+            recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, 1));
             notesAdapter = new NotesAdapter(MainActivity.this, notes);
             recyclerView.setAdapter(notesAdapter);
         });

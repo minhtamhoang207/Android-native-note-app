@@ -1,4 +1,4 @@
-package com.example.androidnote.ui;
+package com.example.androidnote.UI;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
