@@ -1,5 +1,7 @@
 package com.example.androidnote.Adapter;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.androidnote.MainActivity;
 import com.example.androidnote.Model.Notes;
 import com.example.androidnote.R;
+import com.example.androidnote.UI.UpdateNoteActivity;
+import com.example.androidnote.ViewModel.NoteViewModel;
 
 import java.util.List;
 
@@ -46,6 +50,15 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.title.setText(note.title);
         holder.subtitle.setText(note.subtitle);
         holder.content.setText(note.notes);
+        holder.cardItem.setOnClickListener( v -> {
+            Intent intent = new Intent(mainActivity, UpdateNoteActivity.class);
+            intent.putExtra("id",note.id);
+            intent.putExtra("title",note.title);
+            intent.putExtra("subtitle",note.subtitle);
+            intent.putExtra("content",note.notes);
+            intent.putExtra("priority",note.priority);
+            mainActivity.startActivity(intent);
+        });
     }
 
     @Override
@@ -56,14 +69,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     public static class NotesViewHolder extends RecyclerView.ViewHolder{
 
         TextView title, subtitle, content;
-        View priority;
+        View priority, cardItem;
         public NotesViewHolder(@NonNull View itemView) {
             super(itemView);
-
             title = itemView.findViewById(R.id.note_title);
             subtitle = itemView.findViewById(R.id.note_subtitle);
             content = itemView.findViewById(R.id.note_content);
             priority = itemView.findViewById(R.id.note_item_priority);
+            cardItem = itemView.findViewById(R.id.card_item);
         }
     }
 }
